@@ -19,5 +19,10 @@ Route::get('/', function () {
 });
 
 Route::get('table', $url . "\productController@showTable");
+Route::get('addproduct', $url . "\productController@add");
+Route::post('product/update/{slug}', $url. '\productController@update');
+Route::post('product/add', $url. '\productController@simpan');
+Route::get('product/edit/{slug}', $url . "\productController@edit");
 Route::get('product/{slug}', $url . "\productController@showProduct");
 Route::resource('product', $url . '\ProductController');
+Route::delete('product/delete/{product:product_slug}', $url. '\productController@delete');
